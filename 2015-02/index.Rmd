@@ -97,3 +97,11 @@ library(leaflet)
 m = leaflet( width = 400, height = 400) %>% addTiles()
 m %>% setView( -86.8034743, 33.5025432, zoom=17 )
 ```
+
+## htmlwidgets - rpivotTable
+
+```{r}
+library(rpivotTable)
+
+rpivotTable( data.frame(Titanic) )
+```
