@@ -115,3 +115,36 @@ iplotCorr( geneExpr$expr, geneExpr$genotype, reorder=TRUE
    ,chartOpts=list( height = 400, width = 800 )
 )
 ```
+
+## htmlwidgets - svgPanZoom
+
+```{r warning = F, message=F}
+library(SVGAnnotation)
+library(svgPanZoom)
+svgPanZoom(
+  svgPlot(image(volcano))
+  ,controlIconsEnabled = T
+)
+```
+
+## htmlwidgets - epiwidgets
+
+```{r warning = F, echo = T, eval =F}
+library(epiwidgets)
+library(ape)
+data(bird.orders)
+htmlwidgets::as.iframe(
+  treewidget(bird.orders,height = 400, width = 800)
+)
+```
+
+---
+```{r warning = F, echo = F, eval =T}
+library(epiwidgets)
+library(ape)
+data(bird.orders)
+htmlwidgets::as.iframe(
+  treewidget(bird.orders,height = 500, width = 600)
+  ,libdir="lib"
+  ,height = 650
+)
