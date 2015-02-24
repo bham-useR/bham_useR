@@ -1,0 +1,70 @@
+---
+title: "Interactivity in R with JS"
+author: "timelyportfolio"
+date: "February 24, 2015"
+output: ioslides_presentation
+---
+
+## Interactivity in R
+
+Wading into a pool of promise littered with "failure"
+
+
+> ubiquity + innovation of web -> promise within reach
+
+
+Will limit this discussion of interactivity to R + JS/HTML
+
+## How to Get JS -> R
+
+- [V8](https://www.opencpu.org/posts/v8-release-0-5/)
+- manually | [htmltools](https://github.com/rstudio/htmltools) | [rmarkdown](http://rmarkdown.rstudio.com)
+- [**htmlwidgets**](http://htmlwidgets.org)
+
+## How to Get R <-> JS
+
+- manually
+- [Shiny](http://shiny.rstudio.com)
+
+## V8
+
+> Not really interactive, but why rewrite good code?
+
+
+```{r}
+library(V8)
+
+ct <- new_context( "window" )
+ct$eval ( 
+  " console.log( ['I am in Javascript. 1+1 = ', 1 + 1].join('') ) "
+)
+```
+
+## V8 (more powerful examples)
+
+[geospatial analysis with Turf.js](https://gist.github.com/timelyportfolio/9b4fc699bb6d67b7f418)
+
+[pdf creation with libharu](http://bl.ocks.org/timelyportfolio/81208f44c520419015f7)
+
+[SQLite](https://www.opencpu.org/posts/v8-release-0-5/)
+
+
+
+## Manually
+
+```
+<div id = "manual-example"></div>
+<script>
+  document.getElementById("manual-example")
+    .innerText = "ugly manual example"
+</script>
+```
+<div id = "manual-example"></div>
+<script>
+  document.getElementById("manual-example").innerText = "ugly manual example"
+</script>
+
+
+## htmlwidgets
+
+Use Javascript without knowing any Javascript
