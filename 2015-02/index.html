@@ -139,10 +139,10 @@
 
 ct &lt;- new_context( &quot;window&quot; )
 ct$eval ( 
-  &quot; console.log( [&#39;I am in Javascript. 1+1 = &#39;, 1 + 1].join(&#39;&#39;) ) &quot;
+  &quot; console.log( [&#39;I am in JavaScript. 1+1 = &#39;, 1 + 1].join(&#39;&#39;) ) &quot;
 )</pre>
 
-<pre >## I am in Javascript. 1+1 = 2</pre>
+<pre >## I am in JavaScript. 1+1 = 2</pre>
 
 </article></slide><slide class=''><hgroup><h2>V8 (more powerful examples)</h2></hgroup><article  id="v8-more-powerful-examples">
 
@@ -169,10 +169,10 @@ ct$eval (
 
 </article></slide><slide class=''><hgroup><h2>htmlwidgets</h2></hgroup><article  id="htmlwidgets">
 
-<p>Use Javascript without knowing any Javascript</p>
+<p>Use JavaScript without knowing any JavaScript</p>
 
-<p><div id="htmlwidget-2911" style="width:600px;height:400px;" class="DiagrammeR"></div>
-<script type="application/json" data-for="htmlwidget-2911">{ "x": {
+<p><div id="htmlwidget-1545" style="width:600px;height:400px;" class="DiagrammeR"></div>
+<script type="application/json" data-for="htmlwidget-1545">{ "x": {
  "diagram": "\n  sequenceDiagram;\n    participant R;\n    Note left of R: Get Data<br/>Do Calculations\n    htmlwidgets->>R: dependencies, binding \n    alt Static\n      R->>Browser: json;\n      Note right of Browser: User Interact\n    else Shiny\n      loop continuously in response to event\n        R-->>Browser: json over socket;\n        Browser-->>R: json over socket;\n        Note left of R: Get Data<br/>Do Calculations\n        Note right of Browser: User Interact\n      end\n    end\n" 
 },"evals": [  ] }</script></p>
 
@@ -182,8 +182,8 @@ ct$eval (
 m = leaflet( width = 400, height = 400) %&gt;% addTiles()
 m %&gt;% setView( -86.8034743, 33.5025432, zoom=17 )</pre>
 
-<p><div id="htmlwidget-6395" style="width:400px;height:400px;" class="leaflet"></div>
-<script type="application/json" data-for="htmlwidget-6395">{ "x": {
+<p><div id="htmlwidget-5522" style="width:400px;height:400px;" class="leaflet"></div>
+<script type="application/json" data-for="htmlwidget-5522">{ "x": {
  "calls": [
  {
  "method": "tileLayer",

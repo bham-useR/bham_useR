@@ -36,7 +36,7 @@ library(V8)
 
 ct <- new_context( "window" )
 ct$eval ( 
-  " console.log( ['I am in Javascript. 1+1 = ', 1 + 1].join('') ) "
+  " console.log( ['I am in JavaScript. 1+1 = ', 1 + 1].join('') ) "
 )
 ```
 
@@ -67,7 +67,7 @@ ct$eval (
 
 ## htmlwidgets
 
-Use Javascript without knowing any Javascript
+Use JavaScript without knowing any JavaScript
 
 ```{r echo = F}
 library(DiagrammeR)
