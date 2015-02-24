@@ -68,3 +68,32 @@ ct$eval (
 ## htmlwidgets
 
 Use Javascript without knowing any Javascript
+
+```{r echo = F}
+library(DiagrammeR)
+mermaid("
+  sequenceDiagram;
+    participant R;
+    Note left of R: Get Data<br/>Do Calculations
+    htmlwidgets->>R: dependencies, binding 
+    alt Static
+      R->>Browser: json;
+      Note right of Browser: User Interact
+    else Shiny
+      loop continuously in response to event
+        R-->>Browser: json over socket;
+        Browser-->>R: json over socket;
+        Note left of R: Get Data<br/>Do Calculations
+        Note right of Browser: User Interact
+      end
+    end
+", height = 400, width = 600)
+```
+
+## htmlwidgets - Leaflet
+
+```{r}
+library(leaflet)
+m = leaflet( width = 400, height = 400) %>% addTiles()
+m %>% setView( -86.8034743, 33.5025432, zoom=17 )
+```
