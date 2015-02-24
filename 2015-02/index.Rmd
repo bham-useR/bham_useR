@@ -105,3 +105,13 @@ library(rpivotTable)
 
 rpivotTable( data.frame(Titanic) )
 ```
+
+## htmlwidgets - qtlcharts
+
+```{r}
+library(qtlcharts)
+data(geneExpr)
+iplotCorr( geneExpr$expr, geneExpr$genotype, reorder=TRUE
+   ,chartOpts=list( height = 400, width = 800 )
+)
+```
