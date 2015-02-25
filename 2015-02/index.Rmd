@@ -2,7 +2,7 @@
 title: "Interactivity in R with JS"
 author: "timelyportfolio"
 date: "February 24, 2015"
-output: ioslides_presentation
+output: revealjs::revealjs_presentation
 ---
 
 ## Interactivity in R
