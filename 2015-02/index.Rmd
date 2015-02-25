@@ -7,13 +7,13 @@ output: revealjs::revealjs_presentation
 
 ## Interactivity in R
 
-Wading into a pool of promise littered with "failure"
+### Wading into a pool of promise littered with "failure"
 
 
-> ubiquity + innovation of web -> promise within reach
+### ubiquity + innovation of web -> promise within reach
 
 
-Will limit this discussion of interactivity to R + JS/HTML
+### Will limit this discussion of interactivity to R + JS/HTML
 
 ## How to Get JS -> R
 
@@ -109,6 +109,15 @@ rpivotTable( data.frame(Titanic) )
 ## htmlwidgets - qtlcharts
 
 ```{r}
+library(qtlcharts)
+data(geneExpr)
+iplotCorr( geneExpr$expr, geneExpr$genotype, reorder=TRUE
+   ,chartOpts=list( height = 400, width = 800 )
+)
+```
+
+---
+```{r echo = T}
 library(qtlcharts)
 data(geneExpr)
 iplotCorr( geneExpr$expr, geneExpr$genotype, reorder=TRUE
