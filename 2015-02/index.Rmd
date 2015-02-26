@@ -1,6 +1,6 @@
 ---
 title: "Interactivity in R with JS"
-author: "timelyportfolio"
+author: "Bi[R]mingham R"
 date: "February 24, 2015"
 output:
   revealjs::revealjs_presentation:
@@ -110,7 +110,10 @@ mermaid("
 ```{r}
 library(leaflet)
 m = leaflet( width = 400, height = 400) %>% addTiles()
-m %>% setView( -86.8034743, 33.5025432, zoom=17 )
+htmlwidgets::as.iframe(
+  m %>% setView( -86.8034743, 33.5025432, zoom=17 )
+  ,height = 500
+)
 ```
 
 ### htmlwidgets - rpivotTable
@@ -170,6 +173,7 @@ svgPanZoom(
 )
 ```
 
+
 ### htmlwidgets - epiwidgets
 
 ```{r warning = F, echo = T, eval =F}
@@ -180,6 +184,7 @@ treewidget(bird.orders,height = 400, width = 800)
 ```
 
 ---
+
 ```{r warning = F, echo = F, eval =T}
 library(epiwidgets)
 library(ape)
@@ -190,6 +195,13 @@ htmlwidgets::as.iframe(
 )
 ```
 
+
 ### Questions ???
 
 ### Other Resources
+
+- FieldsLive [videos](http://www.fields.utoronto.ca/video-archive/event/318/2014)
+- DataScience.LA videos [Joe Cheng](http://datascience.la/joe-cheng-presents-shiny/) and [Yihui Xie](http://datascience.la/yihui-xie-presents-html-widgets/)
+- `d3.js` [Gallery](http://christopheviau.com/d3list/gallery.html) > 2300 examples
+- [BuildingWidgets](http://buildingwidgets.com/blog) - one `htmlwidget` a week
+
