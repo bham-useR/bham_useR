@@ -2,7 +2,10 @@
 title: "Interactivity in R with JS"
 author: "timelyportfolio"
 date: "February 24, 2015"
-output: revealjs::revealjs_presentation
+output:
+  revealjs::revealjs_presentation:
+    mathjax: null
+    center: true
 ---
 
 ## Interactivity in R
