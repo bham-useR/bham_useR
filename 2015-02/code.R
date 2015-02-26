@@ -1,5 +1,5 @@
 # libharu hpdf example with V8
-example1 <- function(){
+(function(){
 
 # run these hpdf.js examples
 #   http://manuels.github.io/hpdf.js/
@@ -198,18 +198,18 @@ ct$eval("
     # RStudio Viewer doesn't show the pdf
     ,viewer = utils::browseURL
   ) )
-}
+})()
 
 # epiwidgets with dendrogram
-example2 <- function(){
+(function(){
   library(epiwidgets)
   treewidget(
     ape::as.phylo(hclust(dist(USArrests), "ave"))
   )
-}
+})()
 
 # parallel coordinates example
-example3 <- function(){
+(function(){
   library(parcoords)
   library(dplyr)
   data(diamonds,package = "ggplot2")
@@ -226,4 +226,4 @@ example3 <- function(){
         ,colorScale = htmlwidgets::JS("d3.scale.category10()")
       )    
     )
-}
+})()
