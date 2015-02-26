@@ -8,28 +8,40 @@ output:
     center: true
 ---
 
-## Interactivity in R
+### Interactivity in R
 
-### Wading into a pool of promise littered with "failure"
+<style>
+.reveal h1{
+  font-size: 2em;
+}
+div.html-widget-static-bound{
+  margin: auto !important; 
+} 
+.DiagrammeR svg {
+  font-size: 70%;
+}
+</style>
+
+- Wading into a pool of promise littered with "failure"
 
 
-### ubiquity + innovation of web -> promise within reach
+- ubiquity + innovation of web -> promise within reach
 
 
-### Will limit this discussion of interactivity to R + JS/HTML
+- Will limit this discussion of interactivity to R + JS/HTML
 
-## How to Get JS -> R
+### How to Get JS -> R
 
 - [V8](https://www.opencpu.org/posts/v8-release-0-5/)
 - manually | [htmltools](https://github.com/rstudio/htmltools) | [rmarkdown](http://rmarkdown.rstudio.com)
 - [**htmlwidgets**](http://htmlwidgets.org)
 
-## How to Get R <-> JS
+### How to Get R <-> JS
 
 - manually
 - [Shiny](http://shiny.rstudio.com)
 
-## V8
+### V8
 
 > Not really interactive, but why rewrite good code?
 
@@ -43,7 +55,7 @@ ct$eval (
 )
 ```
 
-## V8 (more powerful examples)
+### V8 (more powerful examples)
 
 [geospatial analysis with Turf.js](https://gist.github.com/timelyportfolio/9b4fc699bb6d67b7f418)
 
@@ -53,7 +65,7 @@ ct$eval (
 
 
 
-## Manually
+### Manually
 
 ```
 <div id = "manual-example"></div>
@@ -68,7 +80,7 @@ ct$eval (
 </script>
 
 
-## htmlwidgets
+### htmlwidgets
 
 Use JavaScript without knowing any JavaScript
 
@@ -93,7 +105,7 @@ mermaid("
 ", height = 400, width = 600)
 ```
 
-## htmlwidgets - Leaflet
+### htmlwidgets - Leaflet
 
 ```{r}
 library(leaflet)
@@ -101,7 +113,7 @@ m = leaflet( width = 400, height = 400) %>% addTiles()
 m %>% setView( -86.8034743, 33.5025432, zoom=17 )
 ```
 
-## htmlwidgets - rpivotTable
+### htmlwidgets - rpivotTable
 
 ```{r}
 library(rpivotTable)
@@ -109,7 +121,7 @@ library(rpivotTable)
 rpivotTable( data.frame(Titanic) )
 ```
 
-## htmlwidgets - qtlcharts
+### htmlwidgets - qtlcharts
 
 ```{r}
 library(qtlcharts)
@@ -147,7 +159,7 @@ iplotCurves(y, times, y[,c(1,5)], y[,c(5,16)],
 
 ```
 
-## htmlwidgets - svgPanZoom
+### htmlwidgets - svgPanZoom
 
 ```{r warning = F, message=F}
 library(SVGAnnotation)
@@ -158,15 +170,13 @@ svgPanZoom(
 )
 ```
 
-## htmlwidgets - epiwidgets
+### htmlwidgets - epiwidgets
 
 ```{r warning = F, echo = T, eval =F}
 library(epiwidgets)
 library(ape)
 data(bird.orders)
-htmlwidgets::as.iframe(
-  treewidget(bird.orders,height = 400, width = 800)
-)
+treewidget(bird.orders,height = 400, width = 800)
 ```
 
 ---
@@ -176,6 +186,10 @@ library(ape)
 data(bird.orders)
 htmlwidgets::as.iframe(
   treewidget(bird.orders,height = 500, width = 600)
-  ,libdir="lib"
   ,height = 650
 )
+```
+
+### Questions ???
+
+### Other Resources
