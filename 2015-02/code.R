@@ -207,3 +207,23 @@ example2 <- function(){
     ape::as.phylo(hclust(dist(USArrests), "ave"))
   )
 }
+
+# parallel coordinates example
+example3 <- function(){
+  library(parcoords)
+  library(dplyr)
+  data(diamonds,package = "ggplot2")
+  diamonds[sample(1:nrow(diamonds),5000),] %>%
+    mutate( carat = cut(carat, breaks=c(0,1,2,3,4,5), right = T)) %>%
+    select( carat, color, cut, clarity, depth, table, price,  x, y, z) %>%
+    parcoords(
+      rownames = F # turn off rownames from the data.frame
+      , brushMode = "2D-strums"
+      , reorderable = T
+      , queue = T
+      , color = list(
+        colorBy = "cut"
+        ,colorScale = htmlwidgets::JS("d3.scale.category10()")
+      )    
+    )
+}
